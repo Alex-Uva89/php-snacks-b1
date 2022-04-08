@@ -1,7 +1,6 @@
 <?php
 /*
-Snack 2
-Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
+
 
 Snack 4
 Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
@@ -27,8 +26,8 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
 
             $tappa_calendario = [
                 'squadra' => [
-                    'casa' => 'blu',
-                    'ospite' => 'verde'
+                    'casa' => 'SQUADRA blu',
+                    'ospite' => 'SQUADRA verde'
                 ],
                 'punteggio' => [
                     'casa' => $punteggio_random_casa,
@@ -72,17 +71,47 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
                 <input type="text" name="mail" id="mail" method="get">
                 <label for="age">Inserisci la tua età:</label>
                 <input type="text" name="age" id="age" method="get">
-                <input type="submit" value="Verifica">
+                <button>Verifica</button>
             </form>
             <?php
-                // if ($name_input) {
-                //     # code...
-                // }
+                $lunghezza_name = strlen($name_input); 
+                $is_number = is_numeric($age_input);
+                $ther_is_snail = strpos($mail_input, '@', 1);
+                $ther_is_point = strpos($mail_input, '.', $ther_is_snail);
 
-                echo strlen($name_input);
+                
+                if ($lunghezza_name > 3 && $is_number) {
+                    if ($ther_is_snail === false && $ther_is_point !== false){
+                        echo "<span class='error'>Accesso negato</span>";
+                    } else {
+                        echo "<span class='right'>Accesso riuscito</span>";
+                    };
+                } else {
+                    echo "<span class='error'>Accesso negato</span>";
+                }
+
             ?>
         </div>
-        
+                <!-- ||||||||||||||||||SNACK 3|||||||||||||||||| -->
+            <h2 class="snack_title">snack 3:</h2>
+            <p>Consegna: 'Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta'</p>
+            <div class="container_risultato">
+            <div>Risultato:</div>
+            
+            <?php
+            $array_numeri_casuali = [];
+            $generatore_numeri = rand(0,15);
+
+            while ($array_numeri_casuali < 15){
+                $controllo = in_array($generatore_numeri,  $array_numeri_casuali);
+                $array_numeri_casuali[] = $controllo;
+            }
+            foreach($array_numeri_casuali as $array_numeri_casuali){
+                echo $array_numeri_casuali . "-";
+            };
+            ?>
+        </div>
+
     </div>
 
 </body>

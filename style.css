@@ -4,6 +4,8 @@
   --text: #000000;
   --title: #ff0000;
   --title-snack: #850707bd;
+  --error: #ff0000;
+  --right: #08f108;
 }
 
 * {
@@ -67,4 +69,14 @@ button {
 
 input{
   margin-bottom: .5rem;
+}
+
+.error{
+  color: var(--error);
+  padding-top: 1rem;
+}
+
+.right{
+  color: var(--right);
+  padding-top: 1rem;
 }
