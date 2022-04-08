@@ -11,24 +11,90 @@
 <body>
     <div class="container">
         <?php
-            $punteggio_random_casa = rand('0','100');
-            $punteggio_random_opite = rand('0','100');
 
             $tappa_calendario = [
-                    'squadra' => [
-                        'casa' => 'SQUADRA blu',
-                        'ospite' => 'SQUADRA verde'
+                    [
+                        'casa' => [
+                        'squadra' => 'Torino',
+                        'punteggio' => rand('0','100')
+                        ],
+                        'ospite' => [
+                            'squadra' => 'Milano',
+                            'punteggio' => rand('0','100')
+                        ]
                     ],
-                    'punteggio' => [
-                        'casa' => $punteggio_random_casa,
-                        'ospite' => $punteggio_random_opite
+                    [
+                        'casa' => [
+                            'squadra' => 'Roma',
+                            'punteggio' => rand('0','100')
+                        ],
+                        'ospite' => [
+                            'squadra' => 'Lazio',
+                            'punteggio' => rand('0','100')
+                        ],
                     ],
-                ]
+                    [
+                        'casa' => [
+                            'squadra' => 'Agrigento',
+                            'punteggio' => rand('0','100')
+                        ],
+                        'ospite' => [
+                            'squadra' => 'Bari',
+                            'punteggio' => rand('0','100')
+                        ],
+                    ],
+                    [
+                        'casa' => [
+                            'squadra' => 'Parma',
+                            'punteggio' => rand('0','100')
+                        ],
+                        'ospite' => [
+                            'squadra' => 'Genova',
+                            'punteggio' => rand('0','100')
+                        ],
+                    ],
+                    [
+                        'casa' => [
+                            'squadra' => 'Venezia',
+                            'punteggio' => rand('0','100')
+                        ],
+                        'ospite' => [
+                            'squadra' => 'Palermo',
+                            'punteggio' => rand('0','100')
+                        ],
+                    ],
+                    [
+                        'casa' => [
+                            'squadra' => 'Cagliari',
+                            'punteggio' => rand('0','100')
+                        ],
+                        'ospite' => [
+                            'squadra' => 'Matera',
+                            'punteggio' => rand('0','100')
+                        ],
+                    ],
+                    [
+                        'casa' => [
+                            'squadra' => 'Cuneo',
+                            'punteggio' => rand('0','100'),
+                        ],
+                        'ospite' => [
+                            'squadra' => 'Napoli',
+                            'punteggio' => rand('0','100')
+                        ],
+                    ],
+                    [
+                        'casa' => [
+                            'squadra' => 'Lecce',
+                            'punteggio' => rand('0','100')
+                        ],
+                        'ospite' => [
+                            'squadra' => 'Firenze',
+                            'punteggio' => rand('0','100')
+                        ],
+                    ],
             ];
-            $squadra_casa = $tappa_calendario['squadra']['casa'];
-            $punteggio_casa = $tappa_calendario['punteggio']['casa'];
-            $squadra_ospite = $tappa_calendario['squadra']['ospite'];
-            $punteggio_ospite = $tappa_calendario['punteggio']['ospite'];
+            
             
         ?>
         <h1 class="titolo_principale">Esercizi Snack</h1>
@@ -38,13 +104,20 @@
         <div class="container_risultato">
             <div>Risultato:</div>
                     
-            <?php
-
-
-
-                echo "<div>$squadra_casa - $squadra_ospite : $punteggio_casa - $punteggio_ospite</div>";
-                
-            ?>
+            <ul>
+                <?php
+                    for ($i=0; $i < count($tappa_calendario) ; $i++) { ?>
+                        <li class="item">
+                            <span class="item-dx"><?= $tappa_calendario[$i]['casa']['squadra'] ?></span>
+                            <span> - </span>
+                            <span class="item-sx"><?= $tappa_calendario[$i]['ospite']['squadra'] ?></span>
+                            <span class="separatore"> | </span>
+                            <span class="item-dx"><?= $tappa_calendario[$i]['casa']['punteggio'] ?></span>
+                            <span> - </span>
+                            <span class="item-sx"><?= $tappa_calendario[$i]['ospite']['punteggio'] ?></span>
+                        </li><?php
+                    }?>
+            </ul>
         </div>
         
                 <!-- ||||||||||||||||||SNACK 2|||||||||||||||||| -->

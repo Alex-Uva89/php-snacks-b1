@@ -80,3 +80,22 @@ input{
   color: var(--right);
   padding-top: 1rem;
 }
+.random_number{
+  padding-top: 1rem;
+}
+.item{
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.item-dx{
+  width: calc(100% / 4);
+}
+.item-sx{
+  width: calc(100% / 4);
+}
+
+.separatore{
+  margin: 0 .5rem;
+}
