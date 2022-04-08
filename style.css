@@ -99,3 +99,19 @@ input{
 .separatore{
   margin: 0 .5rem;
 }
+
+.paragrafo{
+  margin: 2rem 0;
+  text-transform: uppercase;
+  color: var(--title);
+}
+
+.frase{
+  width: 80%;
+  margin-bottom: .2rem;
+}
+
+.attention{
+  width: 50%;
+  margin-top: 1rem;
+}

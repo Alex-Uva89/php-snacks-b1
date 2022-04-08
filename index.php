@@ -141,6 +141,7 @@
                 <input type="text" name="age" id="age" method="get">
                 <button>Verifica</button>
             </form>
+            <small class="attention">ATTENZIONE: il nome deve contenere almeno 3 caratteri, la mail deve contenere una @ e un . e l'età deve essere un valore numerico.</small>
             <?php
                 $lunghezza_name = strlen($name_input); 
                 $is_number = is_numeric($age_input);
@@ -149,10 +150,10 @@
 
                 
                 if ($lunghezza_name > 3 && $is_number) {
-                    if ($ther_is_snail === false && $ther_is_point !== false){
-                        echo "<span class='error'>Accesso negato</span>";
-                    } else {
+                    if ($ther_is_snail !== false && $ther_is_point !== false){
                         echo "<span class='right'>Accesso riuscito</span>";
+                    } else {
+                        echo "<span class='error'>Accesso negato</span>";
                     };
                 } else {
                     echo "<span class='error'>Accesso negato</span>";
@@ -314,9 +315,11 @@
                I consigli sono una forma di nostalgia. Dispensarli è un modo di ripescare il passato dal dimenticatoio, ripulirlo, passare la vernice sulle parti più brutte e riciclarlo per più di quel che valga.
                Ma accetta il consiglio… per questa volta';
             $testo_trasformato_in_frasi = explode('.', $testo_originale);
-
+            ?>
+            <div class="paragrafo">Testo Aggiustato:</div>
+            <?php
             for ($frase=0; $frase < count($testo_trasformato_in_frasi); $frase++) { 
-                  echo "<p>".$testo_trasformato_in_frasi[$frase].".</p>";
+                  echo "<p class='frase'>".$testo_trasformato_in_frasi[$frase].".</p>";
             };
                
             ?>
