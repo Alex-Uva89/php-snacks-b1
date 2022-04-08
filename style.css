@@ -1,0 +1,70 @@
+/* RESET */
+:root {
+  --white: #ffffff;
+  --text: #000000;
+  --title: #ff0000;
+  --title-snack: #850707bd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+ background: var(--white);
+ color: var(--text);
+ -webkit-font-smoothing: antialiased;
+}
+
+body, input, button {
+ font-size: 16px;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+ cursor: pointer;
+}
+
+/* INIZIO CSS */
+
+.container{
+  width: 800px;
+  margin: 0 auto;
+}
+
+.titolo_principale{
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--title);
+  margin: 2rem 0;
+}
+
+.snack_title{
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--title-snack);
+  margin: 1rem 0;
+}
+
+.container_risultato{
+  height: fit-content;
+  padding: 1rem;
+  border: 2px solid var(--title-snack);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.form_container{
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  margin-bottom: .5rem;
+}
